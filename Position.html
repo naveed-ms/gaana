@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+
+.absolute{
+    position: absolute;
+    border: solid black 2px;
+    width: 800px;
+    height: 30px;
+    right: 50px;
+}
+.relative{
+    position: relative;
+    border: blue 1px solid;
+    width: 800px;
+    height: 30px;
+    left: 50px;
+
+}
+.static{
+position: static;
+border: solid 3px green;
+width: 800px;
+height: 30px;
+}
+
+.fixed{
+position: fixed;
+border: grey solid 1px; 
+width: 800px;
+height: 30px; 
+}
+</style>
+
+</head>
+<body>
+    <h2>position: static;</h2>
+
+    <p>An element with position: static; is not positioned in any special way; it is 
+    always positioned according to the normal flow of the page:</p>
+
+    <div class="relative">
+        this is the example of relative
+    </div>
+
+    <p>An element with position: static; is not positioned in any special way; it is 
+        always positioned according to the normal flow of the page:</p>
+            
+     <div class="static">
+        this is the example of static
+    </div>
+
+  
+    <p>An element with position: static; is not positioned in any special way; it is 
+        always positioned according to the normal flow of the page:</p>
+
+<div class="absolute">
+        this is the example of absolute
+   </div>
+
+
+</body>
+</html>
