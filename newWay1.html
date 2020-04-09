@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<input id="button" type="button" value="Data fetch button">
+</body>
+
+
+<script>
+
+
+var el = document.querySelector('#button');
+if(el){
+  el.addEventListener('click', loadUser());
+}else 
+{
+console.log("File not v found");
+}
+
+function loadUser(){
+
+var xhr= new XMLHttpRequest();
+xhr.open('Get',' http://muneeb-service-dot-bestsongs-156307.appspot.com/api/v1/featured');
+xhr.onload = function(){
+console.log(xhr.responseText);
+}
+xhr.send();
+
+}
+
+</script>
+
+</html>
+
