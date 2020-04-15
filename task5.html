@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<input id="button" type="button" value="Data fetch button">
+</body>
+
+<script>
+
+var el = document.querySelector('#button');
+if(el){
+  el.addEventListener('click', loadUser());
+}else 
+{
+console.log("File not v found");
+}
+
+function loadUser(){
+
+//var btn=document.getElementById("#btn");
+//btn.addEventListener("click",function(){
+
+var xhr= new XMLHttpRequest();
+xhr.open("Get","apiData.json",true);
+xhr.onload = function(){
+//xhr.onreadystatechange=function(){
+//if (this.readyState == 4 && this.status == 200){
+var response= JSON.parse(xhr.responseText);
+//var people=response.people;
+for(var i=0;i<response.length;i++){
+	//for(var j=0;j<50;j++){
+		console.log(response[i].title);
+//}
+}
+
+
+
+
+//xhr.onload = function(){
+//console.log(xhr.responseText);
+};
+xhr.send();
+
+};
+
+
+
+//});
+
+</script>
+
+
+</html>
