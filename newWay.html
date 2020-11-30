@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html>
+import java.util.Properties;
 
-<body>
-<input id="button" type="button" value="Data fetch button">
-</body>
+public class producer1 {
+public producer1(){
 
+    public Properties properties=new Properties();
+    properties.put("bootstrap.server", "localhost:2081");
+    properties.put("key.serializer","org.apache.kafka.common.seriaization.StringSerializer");
+    properties.put("value.serializer","org.apache.kafka.common.seriaization.StringSerializer");
 
-<script>
+    ProducerRecord producerRecord=new ProducerRecord("channel","name","naveed");
+    KafkaProducer kafkaProducer=new KafkaProducer(properties);
 
-
-var el = document.querySelector('#button');
-if(el){
-  el.addEventListener('click', loadUser());
-}else 
-{
-console.log("File not v found");
+    kafkaProducer.send(producerRecord);
+    kafkaProducer.close();
 }
 
-function loadUser(){
-
-var xhr= new XMLHttpRequest();
-xhr.open('Get','abc.txt');
-xhr.onload = function(){
-console.log(xhr.responseText);
-}
-xhr.send();
 
 }
-
-</script>
-
-</html>
 
